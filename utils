@@ -17,3 +17,13 @@ function hcp () {
 function localhost () {
   open http://localhost:$1
 }
+
+# make playground repository
+function mkpr () {
+  if [ $# -eq 1 ]; then
+    cdp
+    mkdcd $1
+    git init
+    hcp
+  fi
+}
